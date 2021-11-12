@@ -38,7 +38,7 @@ function saltar() {
   hole.classList.add("up")
   setTimeout(() => {
     // 3. Eliminar la clase 'up' para que el bug desaparezca
-
+    hole.classList.remove("up")
     // Hace que un nuevo bug salte desde un agujero si el tiempo no ha terminado
     if (!timeUp) saltar();
   }, time)
@@ -62,6 +62,9 @@ function iniciarJuego() {
   setTimeout(() => timeUp = true, 10 * 1000);
 }
 
+bugs.forEach(key => {
+  key.addEventListener('click', golpear)
+})
 
 // 4. Agregar el evento 'click' al todos los elementos 'bug'
 
