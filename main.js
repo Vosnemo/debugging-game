@@ -46,6 +46,9 @@ function saltar() {
     hole.classList.remove("up")
     // Hace que un nuevo bug salte desde un agujero si el tiempo no ha terminado
     if (!timeUp) saltar();
+    if (timeUp) {
+      alert("juego terminado")
+    };
   }, time)
 }
 
@@ -65,6 +68,7 @@ function iniciarJuego() {
   saltar();
 
   setTimeout(() => timeUp = true, 10 * 1000);
+
 }
 
 
