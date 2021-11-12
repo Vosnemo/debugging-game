@@ -4,10 +4,13 @@ import './style.css'
 const scoreBoard = document.querySelector('.score-value');
 const bugs = document.querySelectorAll('.bug');
 const holes = document.querySelectorAll(".hole");
+const start = document.getElementById("start");
 
 let lastHole;
 let timeUp = false;
 let score = 0;
+
+
 
 // Retorna un tiempo aleatorio entre un rango definido
 function tiempoRandom(min, max) {
@@ -23,7 +26,6 @@ function agujeroRandom(holes) {
   if (lastHole === hole) {
     return agujeroRandom(holes);
   }
-  
   lastHole = hole;
   return hole
 }
@@ -62,10 +64,12 @@ function iniciarJuego() {
   setTimeout(() => timeUp = true, 10 * 1000);
 }
 
+
+// 4. Agregar el evento 'click' al todos los elementos 'bug'
+
 bugs.forEach(key => {
   key.addEventListener('click', golpear)
 })
 
-// 4. Agregar el evento 'click' al todos los elementos 'bug'
-
 // 5. Hacer un bind del evento click del boton iniciar juego
+start.addEventListener('click', iniciarJuego);
