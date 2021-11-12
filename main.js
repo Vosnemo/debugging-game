@@ -1,9 +1,11 @@
 import './style.css'
 
 // 1. En una variable llamada holes, guardar todos los elementos de tipo .hole
+const holes = document.querySelectorAll(".hole");
+
 const scoreBoard = document.querySelector('.score-value');
 const bugs = document.querySelectorAll('.bug');
-const holes = document.querySelectorAll(".hole");
+
 const start = document.getElementById("start");
 
 let lastHole;
@@ -38,6 +40,7 @@ function saltar() {
 
   // 2. Agregar la clase 'up' al elemento 'hole' para que el bug aparezca
   hole.classList.add("up")
+  
   setTimeout(() => {
     // 3. Eliminar la clase 'up' para que el bug desaparezca
     hole.classList.remove("up")
